@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Styles for the table */
+.table {
+  border-collapse: collapse;
+  width: 100%; /* Expand the table to fill the container width */
+  max-width: none; /* Remove the max-width to allow full width */
+  min-height: 100vh;
+
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+}
+
+/* Styles for the table header */
+.table th {
+  background-color: #333;
+  background-color: #857e7ee1;
+
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Styles for table data cells */
+.table td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Alternate row background color */
+.table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover effect on rows */
+.table tbody tr:hover {
+  background-color: #e0e0e0;
+}
+
+#title {
+  background: #333;
+
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 1px;
+}
+
+/* Reset default button styles */
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: transparent;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.history-btn {
+  background-color: #333;
+  background-color: #aeaeae82;
+
+  color: #fff;
+  margin-right: 2px;
+}
+
+.history-btn:hover {
+  background-color: #4618a8;
+}
+
+#home {
+  background-color: #bd1010;
+  color: #fff;
+  margin-right: 2px;
+}
+
+/* heading */
+
+.heading {
+  width: 480px;
+  /* background-color: #aeaeae82; */
+  color: #fff;
+  margin-bottom: 8px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+/* Animation effect */
+
+.heading-container {
+  position: relative;
+  width: 480px;
+  background-color: #aeaeae82;
+  color: #fff;
+  margin-bottom: 8px;
+  margin-top: 10px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.heading {
+  font-size: 24px;
+}
+
+.heading-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ff6600;
+  top: 0;
+  left: -100%;
+  transition: left 0.5s ease-in-out;
+}
+
+.heading-container:hover::before {
+  left: 100%;
+}
