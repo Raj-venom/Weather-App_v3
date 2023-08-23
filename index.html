@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/history.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="css/detailed.css">
 
   <title>Weather App</title>
 </head>
 <body>
   <div class="container">
+    <button class="home" onclick="window.open('index.php', '_self')">Home</button>
     <div class="search">
-      <button class="search-btn">Home</button>
-      <input type="text" class="search-box" placeholder="Enter city name...">
+      <input type="text" class="search-box" id="input" spellcheck="false" placeholder="Search for location         🔍">
     </div>
     <div class="weather-info">
       <div class="city">Loading...</div>
@@ -24,7 +25,7 @@
       <img src="" alt="Weather Icon" class="weather-icon">
     </div>
   </div>
-  <script src="js/test2.js"></script>
+  <script src="js/detailed.js"></script>
 
 </body>
 </html>

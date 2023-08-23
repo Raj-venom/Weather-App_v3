@@ -29,7 +29,7 @@ function displayWeatherData(data2) {
     document.querySelector(".temp").innerHTML = "404";
     document.querySelector(".humidity").innerHTML = "check history";
     document.querySelector(".wind").innerHTML = "below";
-    weatherIcon.src = "";
+    weatherIcon.src = "images/invalid.png";
     document.body.style.backgroundImage = "none";
     return;
   } else {

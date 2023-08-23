@@ -1,5 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   display: flex;
@@ -12,31 +19,39 @@ body {
 
 .container {
   background: rgba(255, 255, 255, 0.3);
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
   text-align: center;
-  width: 450px; /* Slightly wider container */
+  width: 500px; /* Slightly wider container */
 }
 
 .search {
   margin-bottom: 20px;
+  
 }
 
 .search-box {
-  padding: 8px; /* Slightly larger padding */
-  border: none;
-  border-radius: 5px;
-  margin-right: 10px;
+  border: 0;
+  outline: 0;
+  background: #f5ebff;
+  color: #555;
+  padding: 1px 25px;
+  height: 60px;
+  border-radius: 30px;
+  flex: 1;
+  font-size: 18px;
 }
 
-.search-btn {
-  padding: 8px 20px; /* Slightly larger padding */
+.home{
+  padding: 20px 55px; 
+  
   border: none;
-  border-radius: 5px;
-  background-color: #3498db;
+  border-radius: 50px;
+  background-color: #20348b;
   color: white;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .weather-icon {

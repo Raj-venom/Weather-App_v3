@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SQL data Fetching using JS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/opeanApi.css">
 </head>
@@ -81,7 +83,7 @@
             <!-- <p id="title">Load History From </p> -->
             <button id="date-history-btn"  class="history-btn">Load History According to date</button>
             <button id="temp-history-btn"  class="history-btn">High to Low Temperature</button>
-            <button id="history-7day" class="history-btn" onclick="window.open('history.php', '_self')">Detailed forecast</button>
+            <button id="history-7day" class="history-btn" onclick="window.open('index.html', '_self')">Detailed forecast</button>
 
         </table>
     </div>
@@ -91,8 +93,6 @@
 
 <script src="JS/script.js"></script>
 <script src="JS/openapi.js"> </script>
-<!-- <script src="JS/test.js"> </script> -->
-<!-- <script src="JS/test2.js"> </script> -->
 
 </html>
 

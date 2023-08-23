@@ -2,7 +2,6 @@ const WAPI = `https://api.openweathermap.org/data/2.5/weather?q=`;
 const AKEY = `9bc75c1593ddb53d45e9f079edcb0c71`;
 
 const searchBox = document.querySelector(".search-box");
-const searchBtn = document.querySelector(".search-btn");
 const weatherIcon = document.querySelector(".weather-icon");
 
 async function weather(city) {
@@ -23,7 +22,7 @@ function displayWeatherData(data2) {
     document.querySelector(".pressure").innerHTML = "";
     document.querySelector(".date").innerHTML = "";
     document.querySelector(".description").innerHTML = "";
-    weatherIcon.src = "";
+    weatherIcon.src = "images/invalid.png";
     document.body.style.backgroundImage = "none";
     return;
   } else {
@@ -38,7 +37,7 @@ function displayWeatherData(data2) {
     document.querySelector(".city").innerHTML = place;
     document.querySelector(".temp").innerHTML = temp + "°C";
     document.querySelector(".humidity").innerHTML = `Humidity: ${humidity}%`;
-    document.querySelector(".wind").innerHTML = `Wind Speed: ${wind} km/h`;
+    document.querySelector(".wind").innerHTML = `<strong>Wind Speed</strong>: ${wind} km/h`;
     document.querySelector(".pressure").innerHTML = `Pressure: ${pressure} hPa`;
     document.querySelector(".date").innerHTML = `Date: ${date}`;
     document.querySelector(".description").innerHTML = `Description: ${description}`;
@@ -81,11 +80,6 @@ function displayWeatherData(data2) {
   }
 }
 
-searchBtn.addEventListener("click", async () => {
-  const city = searchBox.value;
-  const data2 = await weather(city);
-  displayWeatherData(data2);
-});
 
 // Add an event listener for the "Enter" key press
 searchBox.addEventListener("keypress", async (event) => {
@@ -116,16 +110,5 @@ weather("Stockton-on-Tees").then((data2) => {
   console.log("Error due to:", error);
 });
 
-
-
-// Event listener for the "Back to Main Page" button
-const backBtn = document.querySelector(".back-btn");
-
-backBtn.addEventListener("click", () => {
-  document.querySelector(".search-box").value = ""; // Clear the search box
-  document.querySelector(".container").style.background = "rgba(255, 255, 255, 0.3)";
-  document.body.style.backgroundImage = "none";
-  displayWeatherData(null); // Clear the weather data display
-});
 
 
