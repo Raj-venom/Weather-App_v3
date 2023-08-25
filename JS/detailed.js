@@ -17,8 +17,8 @@ function displayWeatherData(data2) {
   if (!data2 || data2.cod === "404") {
     document.querySelector(".city").innerHTML = "City not found";
     document.querySelector(".temp").innerHTML = "404";
-    document.querySelector(".humidity").innerHTML = "check history";
-    document.querySelector(".wind").innerHTML = "below";
+    document.querySelector(".humidity").innerHTML = "";
+    document.querySelector(".wind").innerHTML = "";
     document.querySelector(".pressure").innerHTML = "";
     document.querySelector(".date").innerHTML = "";
     document.querySelector(".description").innerHTML = "";
@@ -36,11 +36,12 @@ function displayWeatherData(data2) {
 
     document.querySelector(".city").innerHTML = place;
     document.querySelector(".temp").innerHTML = temp + "°C";
-    document.querySelector(".humidity").innerHTML = `Humidity: ${humidity}%`;
-    document.querySelector(".wind").innerHTML = `<strong>Wind Speed</strong>: ${wind} km/h`;
-    document.querySelector(".pressure").innerHTML = `Pressure: ${pressure} hPa`;
-    document.querySelector(".date").innerHTML = `Date: ${date}`;
-    document.querySelector(".description").innerHTML = `Description: ${description}`;
+    document.querySelector(".humidity").innerHTML = `<strong> Humidity: ${humidity}% </strong>`;
+    document.querySelector(".wind").innerHTML = `<strong> Wind Speed: ${wind} km/h </strong>`;
+    document.querySelector(".pressure").innerHTML = `<strong> Pressure: ${pressure} hPa </strong>`;
+    document.querySelector(".date").innerHTML = `<strong> Date: ${date} </strong>`;
+    document.querySelector(".description").innerHTML = `<strong> Description: ${description} </strong>`;
+
 
     if (data2.weather[0].main !== "Rain") {
       document.querySelector(".container").style.background = "none";
