@@ -4,12 +4,6 @@ here JS is used to fetch data from the api  and from local storage.
 PHP and SQL is used to store fetched data in the database and also used to display latest 7 days data stored in the database.
 # Weather App
 
-
-
-![Weather App Demo](readme_image/7days.png)
-![Weather App Demo](readme_image/detailed.png)
-![Weather App Demo](readme_image/home.png)
-
 ## Description
 
 The Weather App is a web application that allows users to check the current weather and the forecast for the next 7 days. It is built using a combination of HTML, CSS, JavaScript, PHP, and SQL. The app utilizes various technologies to fetch and store weather data, ensuring users stay informed about the weather conditions.
