@@ -1,5 +1,5 @@
 const WAPI = `https://api.openweathermap.org/data/2.5/weather?q=`;
-const AKEY = `9bc75c1593ddb53d45e9f079edcb0c71`;
+const AKEY = `Your API KEY`;
 
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
