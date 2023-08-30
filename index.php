@@ -101,7 +101,7 @@
 
 <?php
 
-$apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=Stockton-on-Tees&units=metric&appid=9bc75c1593ddb53d45e9f079edcb0c71";
+$apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=Stockton-on-Tees&units=metric&appid={your api key}";
 
 $curl = curl_init($apiUrl);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
