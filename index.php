@@ -14,6 +14,7 @@
 <body>
 
     <div class="container">
+
         <div class="search">
             <input id="input" type="text" spellcheck="false" placeholder="Search for location         🔍">
             <button id="btn" style="display: none">search</button>
@@ -94,6 +95,20 @@
 <script src="JS/script.js"></script>
 <script src="JS/openapi.js"> </script>
 
+<script>
+document.getElementById("input").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Prevent the default Enter key behavior
+    var input_city = this.value;
+
+    // You can perform any additional processing with input_city here if needed
+
+    // Redirect to the PHP file with the search query
+    window.location.href = "index.php?input_city=" + encodeURIComponent(input_city);
+  }
+});
+</script>
+
 </html>
 
 
@@ -101,7 +116,21 @@
 
 <?php
 
-$apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=Stockton-on-Tees&units=metric&appid={your api key}";
+
+if (isset($_GET['input_city'])) {
+  $input_city = $_GET['input_city'];
+
+
+  echo "Received input: " . $input_city;
+} else {
+  echo "No input received";
+
+  $input_city= "Stockton-on-Tees";
+}
+
+echo "this is value". $input_city;
+
+$apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=".$input_city."&units=metric&appid=9bc75c1593ddb53d45e9f079edcb0c71";
 
 $curl = curl_init($apiUrl);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -136,7 +165,7 @@ if ($weatherData['cod'] === 200) {
   mysqli_stmt_execute($checkStmt);
   $checkResult = mysqli_stmt_get_result($checkStmt);
 
-  if (mysqli_num_rows($checkResult) === 0) {
+  if (mysqli_num_rows($checkResult) !== 0) {
     $insertSql = "INSERT INTO weather_data (city, temperature, description, current_day_and_date, pressure, wind_speed, humidity, icon) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $insertStmt = mysqli_prepare($conn, $insertSql);
     mysqli_stmt_bind_param($insertStmt, "ssssssss", $city, $temperature, $description, $currentDate, $pressure, $windSpeed, $humidity, $icon);
@@ -148,5 +177,3 @@ if ($weatherData['cod'] === 200) {
 }
 ?>
 
-
-?>
